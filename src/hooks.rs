@@ -9,7 +9,7 @@ pub fn hook_block_bash() -> String {
     format!(r#"{START}
 command_not_found_handle() {{
   local input="$*"
-  sutra --no-tui --smriti suggest --input "$input" --interactive
+  sutra --smriti suggest --input "$input" --interactive
   return 127
 }}
 {END}
@@ -20,7 +20,7 @@ pub fn hook_block_zsh() -> String {
     format!(r#"{START}
 command_not_found_handler() {{
   local input="$*"
-  sutra --no-tui --smriti suggest --input "$input" --interactive
+  sutra --smriti suggest --input "$input" --interactive
   return 127
 }}
 {END}

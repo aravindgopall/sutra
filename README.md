@@ -30,7 +30,7 @@ When you type a wrong command (e.g. `gti stats`), Sutra looks at:
 
 ### Build from source
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/aravindgopall/sutra
 cd sutra
 cargo build --release
 sudo cp target/release/sutra /usr/local/bin/sutra

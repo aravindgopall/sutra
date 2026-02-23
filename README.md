@@ -30,7 +30,7 @@ When you type a wrong command (e.g. `gti stats`), Sutra looks at:
 
 ### Install from upstream
 ```bash
-cargo install sutra
+cargo install isutra
 ```
 
 ### Build from source

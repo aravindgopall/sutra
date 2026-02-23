@@ -171,6 +171,20 @@ fn main() -> Result<()> {
     // Handle --no-tui flag: explicitly disables TUI
     let use_tui = cli.tui && !cli.no_tui;
 
+    // Check if this is the first run (no defaults.json and no history.jsonl)
+    let is_first_run = defaults::defaults_path()
+        .map(|p| !p.exists())
+        .unwrap_or(true) && history::history_path()
+        .map(|p| !p.exists())
+        .unwrap_or(true);
+
+    if is_first_run {
+        eprintln!("Welcome to Sutra! Generating defaults catalog for common commands...");
+        defaults::generate_defaults_catalog(None, false)?;
+        eprintln!("Defaults catalog generated successfully!");
+        eprintln!("Run 'sutra --help' for usage information.\n");
+    }
+
     match cli.cmd {
         Cmd::Hooks { action } => match action {
             HookAction::Print => hooks::print_hooks(),
@@ -187,6 +201,10 @@ fn main() -> Result<()> {
                     "Sutra Smriti import: imported={}, skipped={}, errors={}, dry_run={}",
                     rep.imported, rep.skipped, rep.errors, dry_run
                 );
+            }
+            SmritiAction::GenerateDefaults { output, overwrite } => {
+                defaults::generate_defaults_catalog(output, overwrite)?;
+                eprintln!("Defaults catalog generated successfully!");
             }
         },
 

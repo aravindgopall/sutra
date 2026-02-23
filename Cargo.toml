@@ -1,6 +1,6 @@
 [package]
 name = "isutra"
-version = "0.2.0"
+version = "0.2.1"
 edition = "2021"
 description = "Intelligent command suggestor for your typo or wrong commands"
 license = "Apache-2.0"

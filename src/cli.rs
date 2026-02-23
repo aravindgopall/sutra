@@ -80,4 +80,13 @@ pub enum SmritiAction {
         #[arg(long, default_value_t = false)]
         dry_run: bool,
     },
+    /// Generate defaults catalog for common commands
+    GenerateDefaults {
+        /// Output file path (default: ~/.sutra/defaults.json)
+        #[arg(long)]
+        output: Option<std::path::PathBuf>,
+        /// Overwrite existing defaults file
+        #[arg(long, default_value_t = false)]
+        overwrite: bool,
+    },
 }

@@ -2,6 +2,7 @@
 name = "sutra"
 version = "0.2.0"
 edition = "2021"
+description = "Intelligent command suggestor for your typo or wrong commands"
 license = "Apache-2.0"
 repository = "https://github.com/aravindgopall/sutra"
 

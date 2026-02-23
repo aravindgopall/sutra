@@ -28,6 +28,11 @@ When you type a wrong command (e.g. `gti stats`), Sutra looks at:
 
 ## Install
 
+### Install from upstream
+```bash
+cargo install sutra
+```
+
 ### Build from source
 ```bash
 git clone https://github.com/aravindgopall/sutra
